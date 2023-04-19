@@ -2,7 +2,9 @@ describe('sample google search', function() {
   this.tags = ['google'];
 
   it('demo test using expect apis', async function(browser) {
-    await browser.navigateTo('http://google.no');
+    await browser.navigateTo('http://google.no')
+    .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/google1.png')
+    .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/google2.png');
 
     const consentPresent = await browser.isPresent('[aria-modal="true"][aria-label="Before you continue to Google Search"]');
 

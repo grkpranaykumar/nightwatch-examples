@@ -8,6 +8,7 @@ describe('.closeWindow() example test', function () {
       .windowHandles(result => {
         expect(result.value).to.have.length(1);
       })
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/closeWindow1.png')
       .click('#openWindowBttn')
       .windowHandles(result => {
         expect(result.value).to.have.length(2);
@@ -15,6 +16,7 @@ describe('.closeWindow() example test', function () {
       .closeWindow(function (result) {
         console.log('    closeWindow result', result);
       })
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/closeWindow2.png')
       .windowHandles(result => {
         expect(result.value).to.have.length(1);
       });
@@ -27,8 +29,8 @@ describe('.closeWindow() example test', function () {
     let windowHandles = await browser.windowHandles();
     expect(windowHandles).to.have.length(2);
 
-    await browser.switchWindow(windowHandles[1]);
-    await browser.closeWindow();
+    await browser.switchWindow(windowHandles[1]).saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/closeWindow3.png');
+    await browser.closeWindow().saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/closeWindow4.png');
 
     windowHandles = await browser.windowHandles();
     expect(windowHandles).to.have.length(1);

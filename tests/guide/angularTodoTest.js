@@ -4,6 +4,8 @@ describe('angularjs homepage todo list', function() {
     // adding a new task to the list
     const elements = await browser
       .navigateTo('https://angularjs.org')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/angularjs1.png')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/angularjs2.png')
       .sendKeys('[ng-model="todoList.todoText"]', 'what is nightwatch?')
       .click('[value="add"]')
       .angular.getElementsInList('todoList.todos');

@@ -27,12 +27,22 @@ module.exports = {
   custom_assertions_path: '',
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/plugin-api.html
-  plugins: [],
+  plugins: ['@nightwatch/browserstack'],
 
   // See https://nightwatchjs.org/guide/#external-globals
   //globals_path : 'lib/globals.js',
 
   webdriver: {},
+
+  '@nightwatch/browserstack': {
+    testObservability: true,
+    testObservabilityOptions: {
+      user: 'akhiltest_Em8nYl', //1st
+      key: 'mTwxypxyDAStqeeY6AsG',
+      projectName: "nightwatch test suite", // 1st priority
+      buildTag: ["abc","jsdk"]
+    }
+  },
 
   test_settings: {
     default: {
@@ -40,9 +50,10 @@ module.exports = {
       launch_url: 'https://nightwatchjs.org',
 
       screenshots: {
-        enabled: false,
+        enabled: true,
         path: 'screens',
-        on_failure: true
+        on_failure: true,
+        on_error: true
       },
 
       desiredCapabilities: {
@@ -72,29 +83,6 @@ module.exports = {
       }
     },
 
-    firefox: {
-      desiredCapabilities : {
-        browserName : 'firefox',
-        alwaysMatch: {
-          acceptInsecureCerts: true,
-          'moz:firefoxOptions': {
-            args: [
-              // '-headless',
-              // '-verbose'
-            ]
-          }
-        }
-      },
-      webdriver: {
-        start_process: true,
-        server_path: '',
-        cli_args: [
-          // very verbose geckodriver logs
-          // '-vv'
-        ]
-      }
-    },
-
     chrome: {
       desiredCapabilities : {
         browserName : 'chrome',
@@ -121,53 +109,17 @@ module.exports = {
       }
     },
 
-    edge: {
+    firefox: {
       desiredCapabilities : {
-        browserName : 'MicrosoftEdge',
-        'ms:edgeOptions' : {
-          w3c: true,
-          // More info on EdgeDriver: https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/capabilities-edge-options
-          args: [
-            //'--headless'
-          ]
-        }
+        browserName : 'firefox'
       },
 
       webdriver: {
         start_process: true,
-        // Download msedgedriver from https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/
-        //  and set the location below:
         server_path: '',
         cli_args: [
           // --verbose
         ]
-      }
-    },
-
-    //////////////////////////////////////////////////////////////////////////////////
-    // Configuration for when using cucumber-js (https://cucumber.io)                |
-    //                                                                               |
-    // It uses the bundled examples inside the nightwatch examples folder; feel free |
-    // to adapt this to your own project needs                                       |
-    //////////////////////////////////////////////////////////////////////////////////
-    'cucumber-js': {
-      src_folders: ['examples/cucumber-js/features/step_definitions'],
-
-      test_runner: {
-        // set cucumber as the runner
-        type: 'cucumber',
-
-        // define cucumber specific options
-        options: {
-          //set the feature path
-          feature_path: 'node_modules/nightwatch/examples/cucumber-js/*/*.feature',
-
-          // start the webdriver session automatically (enabled by default)
-          // auto_start_session: true
-
-          // use parallel execution in Cucumber
-          // parallel: 2 // set number of workers to use (can also be defined in the cli as --parallel 2
-        }
       }
     },
 
@@ -188,8 +140,9 @@ module.exports = {
       // https://www.browserstack.com/automate/capabilities?tag=selenium-4
       desiredCapabilities: {
         'bstack:options' : {
-          userName: '${BROWSERSTACK_USERNAME}',
-          accessKey: '${BROWSERSTACK_ACCESS_KEY}',
+          userName: 'pranaykumar_JtLlh9',
+          accessKey: '6AqNjsmooxnRsqnxzW4p',
+          projectName: '----' // 2nd priority
         }
       },
 
@@ -254,61 +207,6 @@ module.exports = {
       extends: 'browserstack.local',
       desiredCapabilities: {
         browserName: 'firefox'
-      }
-    },
-    //////////////////////////////////////////////////////////////////////////////////
-    // Configuration for when using the SauceLabs cloud service                      |
-    //                                                                               |
-    // Please set the username and access key by setting the environment variables:  |
-    // - SAUCE_USERNAME                                                              |
-    // - SAUCE_ACCESS_KEY                                                            |
-    //////////////////////////////////////////////////////////////////////////////////
-    saucelabs: {
-      selenium: {
-        host: 'ondemand.saucelabs.com',
-        port: 443
-      },
-      // More info on configuring capabilities can be found on:
-      // https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options
-      desiredCapabilities: {
-        'sauce:options' : {
-          username: '${SAUCE_USERNAME}',
-          accessKey: '${SAUCE_ACCESS_KEY}',
-          // https://docs.saucelabs.com/dev/cli/sauce-connect-proxy/#--region
-          // region: 'us-west-1'
-          // https://docs.saucelabs.com/dev/test-configuration-options/#tunnelidentifier
-          // parentTunnel: '',
-          // tunnelIdentifier: '',
-        }
-      },
-      disable_error_log: false,
-      webdriver: {
-        start_process: false
-      }
-    },
-    'saucelabs.chrome': {
-      extends: 'saucelabs',
-      desiredCapabilities: {
-        browserName: 'chrome',
-        screenResolution: '1280x1024',
-        browserVersion: 'latest',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        timeZone: 'London',
-        chromeOptions : {
-          w3c: true
-        }
-      }
-    },
-    'saucelabs.firefox': {
-      extends: 'saucelabs',
-      desiredCapabilities: {
-        browserName: 'firefox',
-        screenResolution: '1280x1024',
-        browserVersion: 'latest',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        timeZone: 'London'
       }
     },
     //////////////////////////////////////////////////////////////////////////////////

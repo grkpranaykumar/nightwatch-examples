@@ -3,6 +3,8 @@ describe('perform() example', function () {
   it('demo test', function (browser) {
     browser
       .navigateTo('https://nightwatchjs.org/')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/perform1.png')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/perform2.png')
       // self-completing callback
       .perform(function () {
         console.log('1. perform command');

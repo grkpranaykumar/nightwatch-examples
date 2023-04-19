@@ -5,6 +5,8 @@ describe('frame() example test', function () {
 
     browser
       .navigateTo('https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/frame1.png')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/frame2.png')
       .ensure.ableToSwitchToFrame(frameId)
       .frame(frameId, function (result) {
         console.log(result);
@@ -19,6 +21,8 @@ describe('frame() example test', function () {
 
     browser
       .navigateTo('https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/frame3.png')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/frame4.png')
       .frame(frameId, function (result) {
         console.log(result);
       })

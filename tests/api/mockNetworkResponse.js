@@ -8,6 +8,8 @@ describe('mockNetworkResponse() example test', function () {
         },
         body: 'Hello there!'
       })
-      .navigateTo('https://www.google.com');
+      .navigateTo('https://www.google.com')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/mockNetworkResponse1.png')
+      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/mockNetworkResponse2.png');
   });
 });

@@ -1,6 +1,8 @@
 test('getShadowRoot() example test', async function (browser) {
   await browser
     .navigateTo('https://mdn.github.io/web-components-examples/popup-info-box-web-component/')
+    .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/getShadowRoot1.png')
+    .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/getShadowRoot2.png')
     .waitForElementVisible('form');
 
   const shadowRootEl = await browser.getShadowRoot('popup-info');
