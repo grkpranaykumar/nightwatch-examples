@@ -7,8 +7,8 @@ describe('sample with relative locators', function () {
 
     browser
       .waitForElementVisible(passwordElement)
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/relativelocators1.png')
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/relativelocators2.png')
+      .saveScreenshot('screens/api/test/relativelocators1.png')
+      .saveScreenshot('screens/api/test/relativelocators2.png')
       .expect.element(passwordElement).to.be.an('input');
 
     browser.expect.element(passwordElement).attribute('type').equal('password');
@@ -20,8 +20,8 @@ describe('sample with relative locators', function () {
     browser
       .waitForElementVisible('form.login-form')
       .setValue(passwordElement, 'password')
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/relativelocators3.png')
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/relativelocators4.png')
+      .saveScreenshot('screens/api/test/relativelocators3.png')
+      .saveScreenshot('screens/api/test/relativelocators4.png')
       .assert.valueEquals('input[type=password]', 'password');
   });
 

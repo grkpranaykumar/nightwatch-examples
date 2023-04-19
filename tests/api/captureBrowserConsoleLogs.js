@@ -10,8 +10,8 @@ test('captureBrowserConsoleLogs() example test', function (browser) {
       console.log(' Console message type: ' + event.type, '; timestamp: ' + event.timestamp, '; message: ' + event.args[0].value);
     })
     .navigateTo('https://www.google.com')
-    .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/captureBrowserConsoleLogs1.png')
-    .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/captureBrowserConsoleLogs2.png')
+    .saveScreenshot('screens/api/test/captureBrowserConsoleLogs1.png')
+    .saveScreenshot('screens/api/test/captureBrowserConsoleLogs2.png')
     .executeScript(function () {
       console.error('here');
     });

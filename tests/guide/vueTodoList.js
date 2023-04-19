@@ -17,8 +17,8 @@ describe('To-Do List End-to-End Test', function() {
     // adding a new task to the list
     await browser
       .navigateTo('https://todo-vue3-vite.netlify.app/')
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/vue1.png')
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/vue2.png')
+      .saveScreenshot('screens/api/test/vue1.png')
+      .saveScreenshot('screens/api/test/vue2.png')
       .sendKeys(todoElement, 'what is nightwatch?')
       .click(addButtonEl);
 

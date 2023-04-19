@@ -8,8 +8,8 @@ describe('setGeolocation() example test', function () {
         accuracy: 100
       })
       .navigateTo('https://www.gps-coordinates.net/my-location')
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/setGeolocation1.png')
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/setGeolocation2.png')
+      .saveScreenshot('screens/api/test/setGeolocation1.png')
+      .saveScreenshot('screens/api/test/setGeolocation2.png')
       .pause(3000);
   });
 });

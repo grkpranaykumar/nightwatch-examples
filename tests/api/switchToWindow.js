@@ -6,8 +6,8 @@ describe('.switchToWindow() example test', function () {
   it('async window test', async function (browser) {
 		await browser.pause(2000);
     await browser.click('#openWindowBttn');
-    await browser.saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/switchToWindow1.png');
-    await browser.saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/switchToWindow2.png');
+    await browser.saveScreenshot('screens/api/test/switchToWindow1.png');
+    await browser.saveScreenshot('screens/api/test/switchToWindow2.png');
     let windowHandles = await browser.windowHandles();
     browser.assert.equal(windowHandles.length, 2);
 

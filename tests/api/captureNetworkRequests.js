@@ -10,7 +10,7 @@ test('captureNetworkRequests() example test', function (browser) {
       console.log('Request headers:', requestParams.request.headers);
     })
     .navigateTo('https://mdn.github.io/web-components-examples/popup-info-box-web-component/')
-    .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/captureNetworkRequests1.png')
-    .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/captureNetworkRequests2.png');
+    .saveScreenshot('screens/api/test/captureNetworkRequests1.png')
+    .saveScreenshot('screens/api/test/captureNetworkRequests2.png');
 
 });

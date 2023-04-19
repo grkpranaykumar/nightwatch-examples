@@ -18,7 +18,7 @@ describe('.click() example test', function () {
       })
       // with explicit locate strategy
       .click('css selector', githubButton)
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/click1.png')
+      .saveScreenshot('screens/api/test/click1.png')
 
       // with selector object
       .click({
@@ -26,7 +26,7 @@ describe('.click() example test', function () {
         index: 0,
         suppressNotFoundErrors: true
       })
-      .saveScreenshot('/Users/pranaykumar/Documents/nightwatch-examples/screens/api/test/click2.png')
+      .saveScreenshot('screens/api/test/click2.png')
       .windowHandles(result => {
         expect(result.value, '--> There should be 5 tabs open').to.have.length(5);
       });
